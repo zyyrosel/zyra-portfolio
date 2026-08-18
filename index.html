@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zyra Rosel — Executive Assistant · Medical VA · Social Media Manager</title>
+<meta name="description" content="Zyra Rosel — Executive Assistant, Medical Virtual Assistant, and Social Media Manager. I turn chaos into checked-off, tracked, finished work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10233F;
+    --ink-soft:#1B3358;
+    --paper:#F7F3EA;
+    --paper-2:#FFFFFF;
+    --gold:#C9A24B;
+    --gold-deep:#A9822F;
+    --rose:#C97B86;
+    --rose-soft:#F0D9DC;
+    --slate:#55637A;
+    --line: rgba(16,35,63,0.13);
+    --line-light: rgba(247,243,234,0.18);
+    --shadow: 0 20px 50px -20px rgba(16,35,63,0.35);
+    --display: 'Fraunces', serif;
+    --body: 'Inter', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family: var(--body);
+    color: var(--ink);
+    background: var(--paper);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{display:block; max-width:100%;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+  section{position:relative;}
+
+  ::selection{background: var(--gold); color: var(--ink);}
+  :focus-visible{outline: 2px solid var(--gold-deep); outline-offset: 3px;}
+
+  .eyebrow{
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1px;
+    background: var(--gold-deep);
+    display:inline-block;
+  }
+  .eyebrow.on-dark{ color: var(--gold); }
+  .eyebrow.on-dark::before{ background: var(--gold); }
+
+  h1,h2,h3{font-family: var(--display); font-weight:600; letter-spacing:-0.01em;}
+
+  /* ---------- NAV ---------- */
+  header{
+    position: sticky; top:0; z-index:100;
+    background: rgba(247,243,234,0.86);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:74px;
+  }
+  .brand{
+    font-family: var(--display);
+    font-weight:600;
+    font-size: 19px;
+    letter-spacing: 0.01em;
+  }
+  .brand span{color:var(--gold-deep); font-style:italic;}
+  .navlinks{
+    display:flex; gap:30px;
+    font-size: 14px; font-weight:500;
+  }
+  .navlinks a{
+    position:relative;
+    padding: 4px 0;
+    color: var(--slate);
+    transition: color .2s ease;
+  }
+  .navlinks a:hover{color:var(--ink);}
+  .navlinks a::after{
+    content:"";
+    position:absolute; left:0; right:0; bottom:-2px;
+    height:2px; background:var(--gold);
+    transform: scaleX(0); transform-origin:left;
+    transition: transform .25s ease;
+  }
+  .navlinks a:hover::after{transform:scaleX(1);}
+  .nav-cta{
+    font-family: var(--mono);
+    font-size:12px;
+    letter-spacing:.04em;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 18px;
+    border-radius: 3px;
+    transition: background .2s ease, transform .2s ease;
+  }
+  .nav-cta:hover{ background: var(--gold-deep); transform: translateY(-1px); }
+  .navtoggle{display:none;}
+
+  @media (max-width: 860px){
+    .navlinks{display:none;}
+    .navtoggle{display:block; font-family:var(--mono); font-size:12px; border:1px solid var(--line); padding:8px 12px; border-radius:3px;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background: var(--ink);
+    color: var(--paper);
+    padding: 90px 0 0;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-200px; right:-160px;
+    width:520px; height:520px;
+    border-radius:50%;
+    background: radial-gradient(circle at 30% 30%, rgba(201,162,75,0.28), transparent 70%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap:60px;
+    align-items:center;
+    padding-bottom: 70px;
+  }
+  .hero h1{
+    font-size: clamp(40px, 5.4vw, 68px);
+    line-height: 1.04;
+    margin: 22px 0 26px;
+    max-width: 620px;
+  }
+  .hero h1 em{ color: var(--gold); font-style: italic; font-weight:500; }
+  .hero p.lead{
+    font-size: 18px;
+    color: rgba(247,243,234,0.78);
+    max-width: 480px;
+    margin-bottom: 34px;
+  }
+  .cta-row{ display:flex; gap:16px; flex-wrap:wrap; align-items:center; }
+  .btn-primary{
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: .04em;
+    background: var(--gold);
+    color: var(--ink);
+    padding: 15px 26px;
+    border-radius: 3px;
+    display:inline-flex; align-items:center; gap:8px;
+    transition: transform .2s ease, background .2s ease;
+    font-weight:500;
+  }
+  .btn-primary:hover{ background:#DDB964; transform: translateY(-2px); }
+  .btn-ghost{
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: .04em;
+    color: var(--paper);
+    padding: 15px 6px;
+    border-bottom: 1px solid rgba(247,243,234,0.4);
+    transition: border-color .2s ease, color .2s ease;
+  }
+  .btn-ghost:hover{ border-color: var(--gold); color: var(--gold); }
+
+  /* Signature: planner / checklist card */
+  .planner-card{
+    background: var(--paper-2);
+    color: var(--ink);
+    border-radius: 6px;
+    padding: 28px 26px 24px;
+    box-shadow: var(--shadow);
+    transform: rotate(1.4deg);
+    position:relative;
+    max-width: 380px;
+    margin-left:auto;
+  }
+  .planner-card::before{
+    content:"";
+    position:absolute; top:14px; left:-10px;
+    width:20px; height:78%;
+    background: var(--rose-soft);
+    border-radius: 2px;
+    transform: rotate(-4deg);
+    z-index:-1;
+  }
+  .planner-head{
+    display:flex; justify-content:space-between; align-items:baseline;
+    margin-bottom:18px;
+    border-bottom: 1px dashed var(--line);
+    padding-bottom: 12px;
+  }
+  .planner-head .t{ font-family: var(--display); font-weight:600; font-size:17px; }
+  .planner-head .d{ font-family: var(--mono); font-size:11px; color:var(--slate); }
+  .planner-item{
+    display:flex; align-items:flex-start; gap:12px;
+    padding: 9px 0;
+    font-size: 14.5px;
+  }
+  .planner-item .box{
+    width:18px; height:18px; min-width:18px;
+    border: 1.6px solid var(--slate);
+    border-radius: 4px;
+    margin-top:2px;
+    position:relative;
+    background: transparent;
+    transition: background .25s ease, border-color .25s ease;
+  }
+  .planner-item .box svg{
+    position:absolute; inset:0; margin:auto;
+    width:12px; height:12px;
+    opacity:0;
+    transform: scale(0.5);
+  }
+  .planner-item.done .box{ background: var(--ink); border-color: var(--ink); }
+  .planner-item.done .box svg{ opacity:1; transform: scale(1); }
+  .planner-item.done .label{ color: var(--slate); text-decoration: line-through; text-decoration-color: rgba(85,99,122,0.5);}
+  .planner-item .box svg{ transition: opacity .2s ease, transform .2s ease; }
+  .planner-item .label{ transition: color .3s ease; }
+  .planner-foot{
+    margin-top:16px; padding-top:14px; border-top:1px solid var(--line);
+    font-family: var(--mono); font-size: 11px; color: var(--gold-deep);
+    display:flex; justify-content:space-between;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .planner-item .box, .planner-item .box svg, .planner-item .label{ transition: none !important; }
+  }
+
+  /* stat strip */
+  .stat-strip{
+    background: var(--ink-soft);
+    border-top: 1px solid var(--line-light);
+  }
+  .stat-strip .wrap{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 30px 32px;
+  }
+  .stat{
+    text-align:center;
+    border-left: 1px solid var(--line-light);
+    padding: 6px 20px;
+  }
+  .stat:first-child{border-left:none;}
+  .stat .num{
+    font-family: var(--display);
+    font-size: 34px;
+    color: var(--gold);
+    font-weight:600;
+  }
+  .stat .lbl{
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: rgba(247,243,234,0.7);
+    margin-top:4px;
+    letter-spacing:.03em;
+  }
+  @media (max-width:700px){
+    .stat-strip .wrap{grid-template-columns:1fr; gap:18px;}
+    .stat{border-left:none; border-top:1px solid var(--line-light); padding-top:18px;}
+    .stat:first-child{border-top:none; padding-top:0;}
+  }
+
+  /* ---------- SECTION HEADS ---------- */
+  .section-pad{ padding: 100px 0; }
+  .head-block{ max-width: 640px; margin-bottom: 56px; }
+  .head-block h2{ font-size: clamp(30px,3.6vw,44px); margin-top:14px; }
+  .head-block h2 em{ font-style: italic; color: var(--gold-deep); font-weight:500;}
+
+  /* ---------- STORY ---------- */
+  .story-grid{
+    display:grid;
+    grid-template-columns: 320px 1fr;
+    gap: 64px;
+    align-items:start;
+  }
+  .story-photo{
+    position:relative;
+  }
+  .story-photo img{
+    border-radius: 6px;
+    width:100%;
+    box-shadow: var(--shadow);
+  }
+  .story-photo::after{
+    content:"";
+    position:absolute;
+    bottom:-16px; left:-16px;
+    width: 90px; height: 90px;
+    border: 2px solid var(--gold);
+    border-radius: 6px;
+    z-index:-1;
+  }
+  .story-tag{
+    margin-top: 22px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--slate);
+    line-height:1.7;
+  }
+  .story-tag b{ color: var(--ink); }
+  .story-copy p{ margin-bottom: 18px; font-size: 16.5px; color: var(--ink-soft); max-width: 620px;}
+  .story-copy .pull{
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 21px;
+    color: var(--ink);
+    border-left: 3px solid var(--gold);
+    padding-left: 20px;
+    margin: 28px 0;
+    max-width: 560px;
+  }
+  @media (max-width:820px){
+    .story-grid{grid-template-columns:1fr; gap:36px;}
+    .story-photo{max-width:260px;}
+  }
+
+  /* ---------- WHAT I DO — index tab cards ---------- */
+  .do-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow:hidden;
+    background: var(--paper-2);
+  }
+  .do-card{
+    padding: 40px 32px;
+    border-right: 1px solid var(--line);
+    position:relative;
+  }
+  .do-card:last-child{border-right:none;}
+  .do-tab{
+    position:absolute; top:0; left:32px;
+    transform: translateY(-100%);
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.06em;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 6px 12px 8px;
+    border-radius: 5px 5px 0 0;
+  }
+  .do-card:nth-child(1) .do-tab{ background: var(--ink); }
+  .do-card:nth-child(2) .do-tab{ background: var(--rose); color:#3a1f22;}
+  .do-card:nth-child(3) .do-tab{ background: var(--gold); color: var(--ink); }
+  .do-icon{ width:38px; height:38px; margin-bottom:20px; }
+  .do-card h3{
+    font-size: 20px; margin-bottom: 12px; font-weight:600;
+  }
+  .do-card p{ font-size: 14.5px; color: var(--slate); }
+  @media (max-width:860px){
+    .do-grid{grid-template-columns:1fr;}
+    .do-card{border-right:none; border-bottom:1px solid var(--line);}
+    .do-card:last-child{border-bottom:none;}
+    .do-tab{position:static; transform:none; display:inline-flex; margin-bottom:18px; border-radius:5px;}
+  }
+
+  /* ---------- APPROACH — real 5-step cycle ---------- */
+  .approach-dark{ background: var(--ink); color: var(--paper); }
+  .approach-flow{
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 0;
+    margin-top: 10px;
+    position:relative;
+  }
+  .approach-flow::before{
+    content:"";
+    position:absolute;
+    top:22px; left:4%; right:4%;
+    height:1px;
+    background: var(--line-light);
+  }
+  .step{
+    padding: 0 18px 0 0;
+    position:relative;
+  }
+  .step .num{
+    width:44px; height:44px;
+    border-radius:50%;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--mono);
+    font-size:13px;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:20px;
+    position:relative; z-index:2;
+    border: 2px solid var(--gold);
+  }
+  .step h3{
+    font-size:17px; margin-bottom:8px; font-weight:600;
+  }
+  .step p{ font-size:13.5px; color: rgba(247,243,234,0.68); }
+  @media (max-width:900px){
+    .approach-flow{grid-template-columns:1fr; gap:28px;}
+    .approach-flow::before{display:none;}
+  }
+
+  /* ---------- TOOLS ---------- */
+  .tools-note{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family: var(--mono); font-size:12px;
+    background: var(--rose-soft); color:#7a3d46;
+    padding: 8px 14px; border-radius: 30px;
+    margin-bottom: 40px;
+  }
+  .tools-note::before{ content:"●"; color:#C97B86; font-size:9px;}
+  .tool-groups{
+    display:grid; grid-template-columns: repeat(3,1fr); gap: 34px 30px;
+  }
+  .tool-group h4{
+    font-family: var(--mono); font-size:11.5px; letter-spacing:.08em; text-transform:uppercase;
+    color: var(--gold-deep); margin-bottom:14px;
+  }
+  .chip-row{ display:flex; flex-wrap:wrap; gap:9px; }
+  .chip{
+    font-size: 13.5px;
+    padding: 8px 14px;
+    background: var(--paper-2);
+    border: 1px solid var(--line);
+    border-radius: 30px;
+    color: var(--ink-soft);
+  }
+  @media (max-width:760px){ .tool-groups{grid-template-columns:1fr 1fr;} }
+  @media (max-width:520px){ .tool-groups{grid-template-columns:1fr;} }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .words-grid{
+    display:grid; grid-template-columns: repeat(2,1fr); gap: 28px;
+  }
+  .note{
+    background: #FFFDF6;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 30px 28px;
+    position:relative;
+    box-shadow: 0 14px 30px -18px rgba(16,35,63,0.25);
+  }
+  .note::before{
+    content:"";
+    position:absolute; top:-10px; left:26px;
+    width: 44px; height:14px;
+    background: rgba(201,162,75,0.35);
+    transform: rotate(-3deg);
+  }
+  .note p.q{ font-size:15px; color: var(--ink-soft); margin-bottom:16px; font-style:italic;}
+  .note .who{ font-family: var(--mono); font-size:12px; color: var(--slate); }
+  @media (max-width:760px){ .words-grid{grid-template-columns:1fr;} }
+
+  /* ---------- CONTACT ---------- */
+  .contact-dark{
+    background: var(--ink);
+    color: var(--paper);
+    text-align:center;
+    padding: 110px 0 90px;
+    position:relative;
+    overflow:hidden;
+  }
+  .contact-dark::after{
+    content:"";
+    position:absolute; bottom:-220px; left:50%; transform:translateX(-50%);
+    width:640px; height:640px; border-radius:50%;
+    background: radial-gradient(circle, rgba(201,162,75,0.16), transparent 70%);
+  }
+  .contact-dark h2{
+    font-size: clamp(30px,4vw,46px);
+    max-width:680px; margin: 18px auto 20px;
+  }
+  .contact-dark p.lead{
+    color: rgba(247,243,234,0.72);
+    max-width:520px; margin: 0 auto 36px;
+    font-size:16px;
+  }
+  .contact-meta{
+    display:flex; justify-content:center; gap:30px; flex-wrap:wrap;
+    margin-top: 46px;
+    font-family: var(--mono); font-size:13px;
+    color: rgba(247,243,234,0.75);
+  }
+  .contact-meta a:hover{ color: var(--gold); }
+
+  footer{
+    background: var(--ink);
+    border-top: 1px solid var(--line-light);
+    color: rgba(247,243,234,0.55);
+    font-family: var(--mono); font-size:12px;
+    padding: 24px 0;
+    display:flex; justify-content:space-between;
+    flex-wrap:wrap; gap:10px;
+  }
+
+  .reveal{
+    opacity:0; transform: translateY(18px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .reveal.in{ opacity:1; transform:none; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">ZYRA <span>ROSEL</span></div>
+    <div class="navlinks">
+      <a href="#story">Story</a>
+      <a href="#do">What I Do</a>
+      <a href="#approach">Approach</a>
+      <a href="#tools">Tools</a>
+      <a href="#words">Client Words</a>
+    </div>
+    <a class="nav-cta" href="mailto:zyy.rosel@gmail.com">Work with me →</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow on-dark">Executive Assistant · Medical VA · Social Media Manager</div>
+      <h1>Brains, grit, and <em>execution</em> — all in one package.</h1>
+      <p class="lead">I turn scattered to-do lists into finished, tracked, and celebrated work. Calendars held, inboxes tamed, content shipped, compliance covered — so you run the business, not chase it.</p>
+      <div class="cta-row">
+        <a class="btn-primary" href="mailto:zyy.rosel@gmail.com">Let's work together ↗</a>
+        <a class="btn-ghost" href="#approach">See how I work</a>
+      </div>
+    </div>
+
+    <div class="planner-card" id="plannerCard">
+      <div class="planner-head">
+        <span class="t">Today's Wins</span>
+        <span class="d">Mon 08:12</span>
+      </div>
+      <div class="planner-item" data-delay="200"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M1 6L4.5 9.5L11 2" stroke="#F7F3EA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="label">Inbox — zero unread</span></div>
+      <div class="planner-item" data-delay="700"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M1 6L4.5 9.5L11 2" stroke="#F7F3EA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="label">Calendars — fully synced</span></div>
+      <div class="planner-item" data-delay="1200"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M1 6L4.5 9.5L11 2" stroke="#F7F3EA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="label">Content — scheduled for the week</span></div>
+      <div class="planner-item" data-delay="1700"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M1 6L4.5 9.5L11 2" stroke="#F7F3EA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="label">HIPAA docs — filed &amp; compliant</span></div>
+      <div class="planner-item" data-delay="2200"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M1 6L4.5 9.5L11 2" stroke="#F7F3EA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="label">Clinic #6 — launched end-to-end</span></div>
+      <div class="planner-foot"><span>5 / 5 complete</span><span>ZR SYSTEM</span></div>
+    </div>
+  </div>
+
+  <div class="stat-strip">
+    <div class="wrap">
+      <div class="stat"><div class="num">6</div><div class="lbl">Startup clinics launched end-to-end</div></div>
+      <div class="stat"><div class="num">~7 yrs</div><div class="lbl">Remote industry experience</div></div>
+      <div class="stat"><div class="num">100%</div><div class="lbl">HIPAA-compliant documentation record</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad" id="story">
+  <div class="wrap">
+    <div class="story-grid">
+      <div class="reveal">
+        <div class="story-photo">
+          <img src="assets/headshot.jpg" alt="Portrait of Zyra Rosel">
+        </div>
+        <div class="story-tag">
+          <b>Based in</b> Hermosa, Bataan, PH<br>
+          <b>Working</b> remote, worldwide
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="eyebrow">My Story</div>
+        <h2>I didn't fall into this work. <em>I built it.</em></h2>
+        <div class="story-copy">
+          <p>I started in customer service, learning to stay calm when everyone else's day was on fire. From there I moved into healthcare operations, where I helped launch six startup clinics from the ground up — systems, scheduling, compliance, all of it. Somewhere in between, I found social media: a place where strategy meets storytelling, and I fell for that too.</p>
+          <p class="pull">"I don't just manage tasks. I build brands, tell stories, and create impact."</p>
+          <p>Clients tend to describe me as dependable, driven, and solutions-focused. I don't wait to be told what's next — I take initiative, close the loop, and show up with excellence every time. My mission is simple: lighten your load, so you can focus on growing what only you can grow.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad" id="do" style="background:var(--paper-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="head-block reveal">
+      <div class="eyebrow">What I Do</div>
+      <h2>Three ways I take things <em>off your plate.</em></h2>
+    </div>
+    <div class="do-grid reveal">
+      <div class="do-card">
+        <span class="do-tab">01 — ADMIN</span>
+        <svg class="do-icon" viewBox="0 0 40 40" fill="none"><rect x="6" y="9" width="28" height="24" rx="2" stroke="#10233F" stroke-width="1.6"/><path d="M6 15H34" stroke="#10233F" stroke-width="1.6"/><path d="M13 6V12" stroke="#C9A24B" stroke-width="1.6" stroke-linecap="round"/><path d="M27 6V12" stroke="#C9A24B" stroke-width="1.6" stroke-linecap="round"/><path d="M12 21H18" stroke="#10233F" stroke-width="1.4" stroke-linecap="round"/><path d="M12 26H24" stroke="#10233F" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <h3>Executive &amp; Admin Support</h3>
+        <p>Calendars, inboxes, vendor relations, travel, and internal systems — run the way you'd run them yourself, if you had the hours.</p>
+      </div>
+      <div class="do-card">
+        <span class="do-tab">02 — SOCIAL</span>
+        <svg class="do-icon" viewBox="0 0 40 40" fill="none"><path d="M8 10H30C31.1 10 32 10.9 32 12V24C32 25.1 31.1 26 30 26H16L9 32V26H8C6.9 26 6 25.1 6 24V12C6 10.9 6.9 10 8 10Z" stroke="#10233F" stroke-width="1.6" stroke-linejoin="round"/><circle cx="14" cy="18" r="1.6" fill="#C97B86"/><circle cx="19" cy="18" r="1.6" fill="#C97B86"/><circle cx="24" cy="18" r="1.6" fill="#C97B86"/></svg>
+        <h3>Social Media Management</h3>
+        <p>Content strategy, creation, and community management that builds a brand people actually stop scrolling for.</p>
+      </div>
+      <div class="do-card">
+        <span class="do-tab">03 — HEALTHCARE</span>
+        <svg class="do-icon" viewBox="0 0 40 40" fill="none"><path d="M20 8C15 8 11 12 11 17C11 25 20 33 20 33C20 33 29 25 29 17C29 12 25 8 20 8Z" stroke="#10233F" stroke-width="1.6" stroke-linejoin="round"/><path d="M20 12V22" stroke="#C9A24B" stroke-width="1.8" stroke-linecap="round"/><path d="M15 17H25" stroke="#C9A24B" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <h3>Healthcare &amp; Operations Support</h3>
+        <p>HIPAA-compliant documentation, billing, and scheduling across DrChrono, DrFirst, and Intellicure — built from six clinic launches, not a manual.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad approach-dark" id="approach">
+  <div class="wrap">
+    <div class="head-block reveal">
+      <div class="eyebrow on-dark">My Approach</div>
+      <h2>A five-step cycle, run <em>every time.</em></h2>
+    </div>
+    <div class="approach-flow reveal">
+      <div class="step">
+        <div class="num">01</div>
+        <h3>Listen</h3>
+        <p>I get to know your brand and your audience before I touch a single task.</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h3>Plan</h3>
+        <p>I craft content and systems with purpose, not just a posting calendar.</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h3>Create</h3>
+        <p>I build workflows and content that hold up under real, daily use.</p>
+      </div>
+      <div class="step">
+        <div class="num">04</div>
+        <h3>Engage</h3>
+        <p>I bring your brand to life with creativity and consistency.</p>
+      </div>
+      <div class="step">
+        <div class="num">05</div>
+        <h3>Analyze</h3>
+        <p>I measure, learn, and optimize for growth — every cycle, without fail.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad" id="tools">
+  <div class="wrap">
+    <div class="head-block reveal">
+      <div class="eyebrow">Tools I Use</div>
+      <h2>Systems I already <em>speak fluently.</em></h2>
+    </div>
+    <div class="tools-note reveal">Currently building automated workflows with Claude AI + GoHighLevel</div>
+    <div class="tool-groups reveal">
+      <div class="tool-group">
+        <h4>Admin &amp; Ops</h4>
+        <div class="chip-row">
+          <span class="chip">Google Workspace</span>
+          <span class="chip">Monday.com</span>
+          <span class="chip">Trello</span>
+        </div>
+      </div>
+      <div class="tool-group">
+        <h4>Healthcare Systems</h4>
+        <div class="chip-row">
+          <span class="chip">DrChrono</span>
+          <span class="chip">DrFirst</span>
+          <span class="chip">Intellicure</span>
+        </div>
+      </div>
+      <div class="tool-group">
+        <h4>Content &amp; Design</h4>
+        <div class="chip-row">
+          <span class="chip">Canva</span>
+          <span class="chip">CapCut</span>
+          <span class="chip">Adobe</span>
+        </div>
+      </div>
+      <div class="tool-group">
+        <h4>Comms &amp; CRM</h4>
+        <div class="chip-row">
+          <span class="chip">GoToConnect</span>
+          <span class="chip">GoHighLevel</span>
+        </div>
+      </div>
+      <div class="tool-group">
+        <h4>AI &amp; Automation</h4>
+        <div class="chip-row">
+          <span class="chip">Claude AI</span>
+          <span class="chip">ChatGPT</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad" id="words" style="background:var(--paper-2); border-top:1px solid var(--line);">
+  <div class="wrap">
+    <div class="head-block reveal">
+      <div class="eyebrow">Hear It From My Clients</div>
+      <h2>Straight from the <em>inbox.</em></h2>
+    </div>
+    <div class="words-grid reveal">
+      <div class="note">
+        <p class="q">"Zy! I truly appreciate all the work you have done so far. Thanks for always showing up, and making sure that all my tasks are being done. You certainly deserve it — keep up the good work!"</p>
+        <div class="who">— Client, Business Operations</div>
+      </div>
+      <div class="note">
+        <p class="q">"Just want to take a moment to thank you for your dedication to my wound care project. I want to tell you how grateful I am, but also how proud I am to see your growth. As a mid-year appreciation, I'd like to give you a bonus."</p>
+        <div class="who">— Client, Healthcare Practice</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-dark" id="contact">
+  <div class="wrap">
+    <div class="eyebrow on-dark" style="justify-content:center;">Ready to Manage Less?</div>
+    <h2>Let's turn your ideas into results.</h2>
+    <p class="lead">Partner with someone who's as invested in your success as you are. Let's lead with excellence — and make it your new standard.</p>
+    <a class="btn-primary" href="mailto:zyy.rosel@gmail.com">Email me: zyy.rosel@gmail.com</a>
+    <div class="contact-meta">
+      <a href="mailto:zyy.rosel@gmail.com">zyy.rosel@gmail.com</a>
+      <span>Hermosa, Bataan, Philippines</span>
+      <span>Remote · Worldwide</span>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>© 2026 Zyra Rosel</span>
+  <span>Built with intention.</span>
+</footer>
+
+<script>
+  // reveal on scroll
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.15});
+  els.forEach(el=>io.observe(el));
+
+  // planner checklist animation
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const items = document.querySelectorAll('.planner-item');
+  function runChecklist(){
+    items.forEach(item=>{
+      item.classList.remove('done');
+      const delay = parseInt(item.getAttribute('data-delay'),10) || 0;
+      if(reduceMotion){
+        item.classList.add('done');
+      } else {
+        setTimeout(()=>item.classList.add('done'), delay);
+      }
+    });
+  }
+  runChecklist();
+  if(!reduceMotion){
+    setInterval(runChecklist, 6000);
+  }
+</script>
+
+</body>
+</html>
