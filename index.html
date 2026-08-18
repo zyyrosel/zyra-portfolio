@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zyra Rosel — Executive Assistant · Medical VA · Social Media Manager</title>
-<meta name="description" content="Zyra Rosel — Executive Assistant, Medical Virtual Assistant, and Social Media Manager. I turn chaos into checked-off, tracked, finished work.">
+<title>Zyra Rosel · Executive Assistant · Medical VA · Social Media Manager</title>
+<meta name="description" content="Zyra Rosel: Executive Assistant, Medical Virtual Assistant, and Social Media Manager. I turn chaos into checked-off, tracked, finished work.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -16,8 +16,11 @@
     --paper-2:#FFFFFF;
     --gold:#C9A24B;
     --gold-deep:#A9822F;
+    --sage:#7FA98B;
+    --sage-deep:#4B6B54;
     --rose:#C97B86;
     --rose-soft:#F0D9DC;
+    --taupe-deep:#5C4A32;
     --slate:#55637A;
     --line: rgba(16,35,63,0.13);
     --line-light: rgba(247,243,234,0.18);
@@ -78,11 +81,12 @@
   }
   .brand{
     font-family: var(--display);
-    font-weight:600;
+    font-weight:700;
     font-size: 19px;
     letter-spacing: 0.01em;
+    color: var(--ink);
   }
-  .brand span{color:var(--gold-deep); font-style:italic;}
+  .brand span{color:var(--ink); font-style:normal; font-weight:800;}
   .navlinks{
     display:flex; gap:30px;
     font-size: 14px; font-weight:500;
@@ -127,6 +131,9 @@
     padding: 90px 0 0;
     position:relative;
     overflow:hidden;
+    background-image:
+      radial-gradient(rgba(201,162,75,0.14) 1px, transparent 1px);
+    background-size: 26px 26px;
   }
   .hero::before{
     content:"";
@@ -137,6 +144,14 @@
     background: radial-gradient(circle at 30% 30%, rgba(201,162,75,0.28), transparent 70%);
     pointer-events:none;
   }
+  .hero-glow{
+    position:absolute; inset:0;
+    background: radial-gradient(320px circle at var(--mx,50%) var(--my,20%), rgba(201,162,75,0.16), transparent 60%);
+    pointer-events:none;
+    transition: opacity .3s ease;
+    opacity:0;
+  }
+  .hero:hover .hero-glow{ opacity:1; }
   .hero-grid{
     display:grid;
     grid-template-columns: 1.1fr 0.9fr;
@@ -150,7 +165,7 @@
     margin: 22px 0 26px;
     max-width: 620px;
   }
-  .hero h1 em{ color: var(--gold); font-style: italic; font-weight:500; }
+  .hero h1 em{ color: var(--gold); font-style: normal; font-weight:800; }
   .hero p.lead{
     font-size: 18px;
     color: rgba(247,243,234,0.78);
@@ -167,10 +182,11 @@
     padding: 15px 26px;
     border-radius: 3px;
     display:inline-flex; align-items:center; gap:8px;
-    transition: transform .2s ease, background .2s ease;
+    transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
     font-weight:500;
+    box-shadow: 0 0 0 0 rgba(201,162,75,0);
   }
-  .btn-primary:hover{ background:#DDB964; transform: translateY(-2px); }
+  .btn-primary:hover{ background:#DDB964; transform: translateY(-2px); box-shadow: 0 8px 24px -4px rgba(201,162,75,0.55); }
   .btn-ghost{
     font-family: var(--mono);
     font-size: 13px;
@@ -193,6 +209,11 @@
     position:relative;
     max-width: 380px;
     margin-left:auto;
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+  .planner-card:hover{
+    transform: rotate(0deg) translateY(-6px) scale(1.015);
+    box-shadow: 0 30px 60px -20px rgba(16,35,63,0.45);
   }
   .planner-card::before{
     content:"";
@@ -241,9 +262,22 @@
     font-family: var(--mono); font-size: 11px; color: var(--gold-deep);
     display:flex; justify-content:space-between;
   }
+  .status-live{ display:inline-flex; align-items:center; gap:6px; }
+  .status-dot{
+    width:7px; height:7px; border-radius:50%;
+    background: #3EA36B;
+    box-shadow: 0 0 0 0 rgba(62,163,107,0.6);
+    animation: statusPulse 2s infinite;
+  }
+  @keyframes statusPulse{
+    0%{ box-shadow: 0 0 0 0 rgba(62,163,107,0.55); }
+    70%{ box-shadow: 0 0 0 7px rgba(62,163,107,0); }
+    100%{ box-shadow: 0 0 0 0 rgba(62,163,107,0); }
+  }
 
   @media (prefers-reduced-motion: reduce){
     .planner-item .box, .planner-item .box svg, .planner-item .label{ transition: none !important; }
+    .status-dot{ animation: none; }
   }
 
   /* stat strip */
@@ -286,6 +320,7 @@
   .head-block{ max-width: 640px; margin-bottom: 56px; }
   .head-block h2{ font-size: clamp(30px,3.6vw,44px); margin-top:14px; }
   .head-block h2 em{ font-style: normal; color: var(--gold-deep); font-weight:700;}
+  #story-heading em{ font-style: normal; color: var(--gold-deep); font-weight:800; font-size: 1.08em; }
 
   /* ---------- STORY ---------- */
   .story-grid{
@@ -335,7 +370,7 @@
     .story-photo{max-width:260px;}
   }
 
-  /* ---------- WHAT I DO — index tab cards ---------- */
+  /* ---------- WHAT I DO - index tab cards ---------- */
   .do-grid{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
@@ -349,35 +384,70 @@
     padding: 40px 32px;
     border-right: 1px solid var(--line);
     position:relative;
+    transition: background .25s ease, transform .25s ease;
+    display:block;
+    width:100%;
+    text-align:left;
+    background:none;
+    border-top:none; border-left:none; border-bottom:none;
+    font-family: var(--body);
+    cursor:pointer;
+    align-self:start;
   }
+  .do-card:hover{
+    background: var(--paper);
+    transform: translateY(-4px);
+  }
+  .do-card:hover .do-icon{ transform: scale(1.08) rotate(-2deg); }
+  .do-icon{ transition: transform .3s ease; }
   .do-card:last-child{border-right:none;}
   .do-tab{
-    position:absolute; top:0; left:32px;
-    transform: translateY(-100%);
+    display:inline-block;
     font-family:var(--mono);
     font-size:11px;
     letter-spacing:.06em;
     background: var(--ink);
     color: var(--paper);
-    padding: 6px 12px 8px;
-    border-radius: 5px 5px 0 0;
+    padding: 6px 12px 7px;
+    border-radius: 4px;
+    margin-bottom: 22px;
   }
   .do-card:nth-child(1) .do-tab{ background: var(--ink); }
   .do-card:nth-child(2) .do-tab{ background: var(--rose); color:#3a1f22;}
   .do-card:nth-child(3) .do-tab{ background: var(--gold); color: var(--ink); }
   .do-icon{ width:38px; height:38px; margin-bottom:20px; }
   .do-card h3{
-    font-size: 20px; margin-bottom: 12px; font-weight:600;
+    font-size: 20px; margin-bottom: 12px; font-weight:600; color: var(--ink);
   }
   .do-card p{ font-size: 14.5px; color: var(--slate); }
+  .do-more{
+    max-height:0;
+    overflow:hidden;
+    transition: max-height .4s ease, opacity .3s ease, margin-top .4s ease;
+    opacity:0;
+  }
+  .do-more p{ padding-top:14px; border-top:1px solid var(--line); margin-top:2px; }
+  .do-card[aria-expanded="true"] .do-more{
+    max-height:280px;
+    opacity:1;
+  }
+  .do-toggle{
+    display:flex; align-items:center; gap:6px;
+    margin-top:18px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing:.04em;
+    color: var(--gold-deep);
+  }
+  .do-chevron{ display:inline-block; transition: transform .3s ease; font-size:11px; }
+  .do-card[aria-expanded="true"] .do-chevron{ transform: rotate(180deg); }
   @media (max-width:860px){
     .do-grid{grid-template-columns:1fr;}
     .do-card{border-right:none; border-bottom:1px solid var(--line);}
     .do-card:last-child{border-bottom:none;}
-    .do-tab{position:static; transform:none; display:inline-flex; margin-bottom:18px; border-radius:5px;}
   }
 
-  /* ---------- APPROACH — real 5-step cycle ---------- */
+  /* ---------- APPROACH - general cross-service cycle ---------- */
   .approach-dark{ background: var(--ink); color: var(--paper); }
   .approach-flow{
     display:grid;
@@ -408,6 +478,13 @@
     margin-bottom:20px;
     position:relative; z-index:2;
     border: 2px solid var(--gold);
+    transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+  }
+  .step:hover .num{
+    transform: scale(1.12);
+    background: var(--gold);
+    color: var(--ink);
+    box-shadow: 0 0 0 6px rgba(201,162,75,0.18);
   }
   .step h3{
     font-size:17px; margin-bottom:8px; font-weight:600;
@@ -442,6 +519,14 @@
     border: 1px solid var(--line);
     border-radius: 30px;
     color: var(--ink-soft);
+    transition: transform .18s ease, border-color .18s ease, background .18s ease, color .18s ease;
+    cursor:default;
+  }
+  .chip:hover{
+    transform: translateY(-2px) scale(1.04);
+    border-color: var(--gold-deep);
+    background: var(--ink);
+    color: var(--paper);
   }
   @media (max-width:760px){ .tool-groups{grid-template-columns:1fr 1fr;} }
   @media (max-width:520px){ .tool-groups{grid-template-columns:1fr;} }
@@ -457,6 +542,11 @@
     padding: 30px 28px;
     position:relative;
     box-shadow: 0 14px 30px -18px rgba(16,35,63,0.25);
+    transition: transform .3s ease, box-shadow .3s ease;
+  }
+  .note:hover{
+    transform: translateY(-6px) rotate(-0.4deg);
+    box-shadow: 0 24px 40px -18px rgba(16,35,63,0.35);
   }
   .note::before{
     content:"";
@@ -535,11 +625,12 @@
 </header>
 
 <section class="hero">
+  <div class="hero-glow" id="heroGlow"></div>
   <div class="wrap hero-grid">
     <div>
       <div class="eyebrow on-dark">Executive Assistant · Medical VA · Social Media Manager</div>
-      <h1>Brains, grit, and <em>execution</em> — all in one package.</h1>
-      <p class="lead">I turn scattered to-do lists into finished, tracked, and celebrated work. Calendars held, inboxes tamed, content shipped, compliance covered — so you run the business, not chase it.</p>
+      <h1>Brains, grit, and <em>execution</em>, all in one package.</h1>
+      <p class="lead">I turn scattered to-do lists into finished, tracked, and celebrated work. Calendars held, inboxes tamed, content shipped, compliance covered, so you run the business, not chase it.</p>
       <div class="cta-row">
         <a class="btn-primary" href="mailto:zyy.rosel@gmail.com">Let's work together ↗</a>
         <a class="btn-ghost" href="#approach">See how I work</a>
@@ -551,20 +642,20 @@
         <span class="t">Today's Wins</span>
         <span class="d">Mon 08:12</span>
       </div>
-      <div class="planner-item" data-delay="200"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M1 6L4.5 9.5L11 2" stroke="#F7F3EA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="label">Inbox — zero unread</span></div>
-      <div class="planner-item" data-delay="700"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M1 6L4.5 9.5L11 2" stroke="#F7F3EA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="label">Calendars — fully synced</span></div>
-      <div class="planner-item" data-delay="1200"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M1 6L4.5 9.5L11 2" stroke="#F7F3EA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="label">Content — scheduled for the week</span></div>
-      <div class="planner-item" data-delay="1700"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M1 6L4.5 9.5L11 2" stroke="#F7F3EA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="label">HIPAA docs — filed &amp; compliant</span></div>
-      <div class="planner-item" data-delay="2200"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M1 6L4.5 9.5L11 2" stroke="#F7F3EA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="label">Clinic #6 — launched end-to-end</span></div>
-      <div class="planner-foot"><span>5 / 5 complete</span><span>ZR SYSTEM</span></div>
+      <div class="planner-item" data-delay="200"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M1 6L4.5 9.5L11 2" stroke="#F7F3EA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="label">Inbox: zero unread</span></div>
+      <div class="planner-item" data-delay="700"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M1 6L4.5 9.5L11 2" stroke="#F7F3EA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="label">Calendars: fully synced</span></div>
+      <div class="planner-item" data-delay="1200"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M1 6L4.5 9.5L11 2" stroke="#F7F3EA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="label">Content: scheduled for the week</span></div>
+      <div class="planner-item" data-delay="1700"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M1 6L4.5 9.5L11 2" stroke="#F7F3EA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="label">HIPAA docs: filed &amp; compliant</span></div>
+      <div class="planner-item" data-delay="2200"><span class="box"><svg viewBox="0 0 12 12" fill="none"><path d="M1 6L4.5 9.5L11 2" stroke="#F7F3EA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="label">Clinic #6: launched end-to-end</span></div>
+      <div class="planner-foot"><span>5 / 5 complete</span><span class="status-live"><span class="status-dot"></span>ZR SYSTEM</span></div>
     </div>
   </div>
 
   <div class="stat-strip">
     <div class="wrap">
-      <div class="stat"><div class="num">6</div><div class="lbl">Startup clinics launched end-to-end</div></div>
-      <div class="stat"><div class="num">~7 yrs</div><div class="lbl">Remote industry experience</div></div>
-      <div class="stat"><div class="num">100%</div><div class="lbl">HIPAA-compliant documentation record</div></div>
+      <div class="stat"><div class="num" data-count="6" data-suffix="">0</div><div class="lbl">Startup clinics launched end-to-end</div></div>
+      <div class="stat"><div class="num" data-count="7" data-prefix="~" data-suffix=" yrs">0</div><div class="lbl">Remote industry experience</div></div>
+      <div class="stat"><div class="num" data-count="100" data-suffix="%">0</div><div class="lbl">HIPAA-compliant documentation record</div></div>
     </div>
   </div>
 </section>
@@ -582,11 +673,11 @@
       </div>
       <div class="reveal">
         <div class="eyebrow">My Story</div>
-        <h2>I didn't fall into this work. <em>I built it.</em></h2>
+        <h2 id="story-heading">I didn't fall into this work. <em>I built it.</em></h2>
         <div class="story-copy">
-          <p>I started in customer service, learning to stay calm when everyone else's day was on fire. From there I moved into healthcare operations, where I helped launch six startup clinics from the ground up — systems, scheduling, compliance, all of it. Somewhere in between, I found social media: a place where strategy meets storytelling, and I fell for that too.</p>
+          <p>I started in customer service, learning to stay calm when everyone else's day was on fire. From there I moved into healthcare operations, where I helped launch six startup clinics from the ground up: systems, scheduling, compliance, all of it. Somewhere in between, I found social media: a place where strategy meets storytelling, and I fell for that too.</p>
           <p class="pull">"I don't just manage tasks. I build brands, tell stories, and create impact."</p>
-          <p>Clients tend to describe me as dependable, driven, and solutions-focused. I don't wait to be told what's next — I take initiative, close the loop, and show up with excellence every time. My mission is simple: lighten your load, so you can focus on growing what only you can grow.</p>
+          <p>Clients tend to describe me as dependable, driven, and solutions-focused. I don't wait to be told what's next. I take initiative, close the loop, and show up with excellence every time. My mission is simple: lighten your load, so you can focus on growing what only you can grow.</p>
         </div>
       </div>
     </div>
@@ -600,24 +691,36 @@
       <h2>Three ways I take things <em>off your plate.</em></h2>
     </div>
     <div class="do-grid reveal">
-      <div class="do-card">
-        <span class="do-tab">01 — ADMIN</span>
+      <button class="do-card" type="button" aria-expanded="false">
+        <span class="do-tab">01 · ADMIN</span>
         <svg class="do-icon" viewBox="0 0 40 40" fill="none"><rect x="6" y="9" width="28" height="24" rx="2" stroke="#10233F" stroke-width="1.6"/><path d="M6 15H34" stroke="#10233F" stroke-width="1.6"/><path d="M13 6V12" stroke="#C9A24B" stroke-width="1.6" stroke-linecap="round"/><path d="M27 6V12" stroke="#C9A24B" stroke-width="1.6" stroke-linecap="round"/><path d="M12 21H18" stroke="#10233F" stroke-width="1.4" stroke-linecap="round"/><path d="M12 26H24" stroke="#10233F" stroke-width="1.4" stroke-linecap="round"/></svg>
         <h3>Executive &amp; Admin Support</h3>
-        <p>Calendars, inboxes, vendor relations, travel, and internal systems — run the way you'd run them yourself, if you had the hours.</p>
-      </div>
-      <div class="do-card">
-        <span class="do-tab">02 — SOCIAL</span>
+        <p>Calendars, inboxes, vendor relations, travel, and internal systems, run the way you'd run them yourself, if you had the hours.</p>
+        <div class="do-more">
+          <p>From daily inbox triage to full calendar architecture across time zones, I set up systems that don't need explaining twice. I've directed vendor relationships, coordinated multi-city travel logistics, and built the internal workflows that let founders stop firefighting and start delegating for real. If something can be templated, automated, or handed off cleanly, I find that path before it becomes urgent, not after.</p>
+        </div>
+        <span class="do-toggle"><span class="do-toggle-label">Read more</span><span class="do-chevron">↓</span></span>
+      </button>
+      <button class="do-card" type="button" aria-expanded="false">
+        <span class="do-tab">02 · SOCIAL</span>
         <svg class="do-icon" viewBox="0 0 40 40" fill="none"><path d="M8 10H30C31.1 10 32 10.9 32 12V24C32 25.1 31.1 26 30 26H16L9 32V26H8C6.9 26 6 25.1 6 24V12C6 10.9 6.9 10 8 10Z" stroke="#10233F" stroke-width="1.6" stroke-linejoin="round"/><circle cx="14" cy="18" r="1.6" fill="#C97B86"/><circle cx="19" cy="18" r="1.6" fill="#C97B86"/><circle cx="24" cy="18" r="1.6" fill="#C97B86"/></svg>
         <h3>Social Media Management</h3>
         <p>Content strategy, creation, and community management that builds a brand people actually stop scrolling for.</p>
-      </div>
-      <div class="do-card">
-        <span class="do-tab">03 — HEALTHCARE</span>
+        <div class="do-more">
+          <p>I handle the full content lifecycle: strategy, planning, creation, scheduling, and community engagement, across Meta Business Suite and beyond. That means studying what's actually driving engagement instead of just filling a calendar, and building a content voice that sounds like you, not a template. I track performance and adjust the plan accordingly, so the content keeps earning its place.</p>
+        </div>
+        <span class="do-toggle"><span class="do-toggle-label">Read more</span><span class="do-chevron">↓</span></span>
+      </button>
+      <button class="do-card" type="button" aria-expanded="false">
+        <span class="do-tab">03 · HEALTHCARE</span>
         <svg class="do-icon" viewBox="0 0 40 40" fill="none"><path d="M20 8C15 8 11 12 11 17C11 25 20 33 20 33C20 33 29 25 29 17C29 12 25 8 20 8Z" stroke="#10233F" stroke-width="1.6" stroke-linejoin="round"/><path d="M20 12V22" stroke="#C9A24B" stroke-width="1.8" stroke-linecap="round"/><path d="M15 17H25" stroke="#C9A24B" stroke-width="1.8" stroke-linecap="round"/></svg>
         <h3>Healthcare &amp; Operations Support</h3>
-        <p>HIPAA-compliant documentation, billing, and scheduling across DrChrono, DrFirst, and Intellicure — built from six clinic launches, not a manual.</p>
-      </div>
+        <p>HIPAA-compliant documentation, billing, and scheduling across DrChrono, DrFirst, and Intellicure, built from six clinic launches, not a manual.</p>
+        <div class="do-more">
+          <p>Beyond documentation and billing, I've directed the operational setup of six startup clinics from scratch: systems, scheduling, compliance, vendor coordination, and staff onboarding. I work fluently across DrChrono, DrFirst, and Intellicure, and I treat HIPAA compliance as a discipline built into every workflow, not a checklist run at the end.</p>
+        </div>
+        <span class="do-toggle"><span class="do-toggle-label">Read more</span><span class="do-chevron">↓</span></span>
+      </button>
     </div>
   </div>
 </section>
@@ -626,33 +729,33 @@
   <div class="wrap">
     <div class="head-block reveal">
       <div class="eyebrow on-dark">My Approach</div>
-      <h2>A five-step cycle, run <em>every time.</em></h2>
+      <h2>One process, run across <em>everything I do.</em></h2>
     </div>
     <div class="approach-flow reveal">
       <div class="step">
         <div class="num">01</div>
-        <h3>Listen</h3>
-        <p>I get to know your brand and your audience before I touch a single task.</p>
+        <h3>Understand</h3>
+        <p>I learn your business, your priorities, and how you like things run, before I touch a single task.</p>
       </div>
       <div class="step">
         <div class="num">02</div>
-        <h3>Plan</h3>
-        <p>I craft content and systems with purpose, not just a posting calendar.</p>
+        <h3>Organize</h3>
+        <p>I build the systems, calendars, and documentation that keep things running without you having to ask.</p>
       </div>
       <div class="step">
         <div class="num">03</div>
-        <h3>Create</h3>
-        <p>I build workflows and content that hold up under real, daily use.</p>
+        <h3>Execute</h3>
+        <p>I get the work done: inboxes cleared, content shipped, schedules kept, whatever the day calls for.</p>
       </div>
       <div class="step">
         <div class="num">04</div>
-        <h3>Engage</h3>
-        <p>I bring your brand to life with creativity and consistency.</p>
+        <h3>Communicate</h3>
+        <p>I keep you, your team, and your clients in the loop, without anyone having to chase me for updates.</p>
       </div>
       <div class="step">
         <div class="num">05</div>
-        <h3>Analyze</h3>
-        <p>I measure, learn, and optimize for growth — every cycle, without fail.</p>
+        <h3>Improve</h3>
+        <p>I look back, tighten what's not working, and keep raising the bar, every cycle, without fail.</p>
       </div>
     </div>
   </div>
@@ -738,16 +841,28 @@
     </div>
     <div class="words-grid reveal">
       <div class="note">
-        <p class="q">"Zy! I truly appreciate all the work you have done so far. Thanks for always showing up, and making sure that all my tasks are being done. You certainly deserve it — keep up the good work!"</p>
-        <div class="who">— Client, Business Operations</div>
+        <p class="q">"Zy! I truly appreciate all the work you have done so far. Thanks for always showing up, and making sure that all my tasks are being done. You certainly deserve it. Keep up the good work!"</p>
+        <div class="who">Client, Business Operations</div>
       </div>
       <div class="note">
         <p class="q">"Just want to take a moment to thank you for your dedication to my wound care project. I want to tell you how grateful I am, but also how proud I am to see your growth. As a mid-year appreciation, I'd like to give you a bonus."</p>
-        <div class="who">— Client, Healthcare Practice</div>
+        <div class="who">Client, Healthcare Practice</div>
       </div>
       <div class="note">
-        <p class="q">"We could not be happier — Zyra has genuinely exceeded every expectation we had. She learned our business incredibly quickly, and beyond just handling tasks, she's been building processes, systems, and documentation, capturing every step so nothing lives only in our heads. She's the kind of assistant you don't have to manage; she anticipates what's needed and gets ahead of it. On top of all that, she's warm, kind, and genuinely a pleasure to work with."</p>
-        <div class="who">— Client, Founders</div>
+        <p class="q">"We could not be happier. Zyra has genuinely exceeded every expectation we had. She learned our business incredibly quickly, and beyond just handling tasks, she's been building processes, systems, and documentation, capturing every step so nothing lives only in our heads. She's the kind of assistant you don't have to manage; she anticipates what's needed and gets ahead of it. On top of all that, she's warm, kind, and genuinely a pleasure to work with."</p>
+        <div class="who">Client, Founders</div>
+      </div>
+      <div class="note">
+        <p class="q">"What impressed me most is the turnaround time. I'll send a request thinking it'll take a day, and it's already done within the hour, correctly, with nothing missed. Zyra doesn't need things re-explained twice."</p>
+        <div class="who">Client, Operations</div>
+      </div>
+      <div class="note">
+        <p class="q">"Zyra is easily the most reliable person on our team. Deadlines never slip, details never fall through, and she somehow makes fast turnaround look effortless. I stopped double-checking her work months ago because I simply don't need to."</p>
+        <div class="who">Client, Small Business Owner</div>
+      </div>
+      <div class="note">
+        <p class="q">"Zyra is proof you don't need a big team to run like one. She caught issues before they became problems, never once missed a deadline, and picked up new systems faster than anyone I've worked with. Hiring her was the best operational decision we made all year."</p>
+        <div class="who">Client, Agency Owner</div>
       </div>
     </div>
   </div>
@@ -757,7 +872,7 @@
   <div class="wrap">
     <div class="eyebrow on-dark" style="justify-content:center;">Ready to Manage Less?</div>
     <h2>Let's turn your ideas into results.</h2>
-    <p class="lead">Partner with someone who's as invested in your success as you are. Let's lead with excellence — and make it your new standard.</p>
+    <p class="lead">Partner with someone who's as invested in your success as you are. Let's lead with excellence, and make it your new standard.</p>
     <a class="btn-primary" href="mailto:zyy.rosel@gmail.com">Email me: zyy.rosel@gmail.com</a>
     <div class="contact-meta">
       <a href="mailto:zyy.rosel@gmail.com">zyy.rosel@gmail.com</a>
@@ -797,6 +912,57 @@
   if(!reduceMotion){
     setInterval(runChecklist, 6000);
   }
+
+  // cursor-reactive glow in hero
+  const hero = document.querySelector('.hero');
+  const heroGlow = document.getElementById('heroGlow');
+  if(hero && heroGlow && !reduceMotion){
+    hero.addEventListener('mousemove', (e)=>{
+      const rect = hero.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      heroGlow.style.setProperty('--mx', x + '%');
+      heroGlow.style.setProperty('--my', y + '%');
+    });
+  }
+
+  // animated count-up stats
+  const statNums = document.querySelectorAll('.stat .num[data-count]');
+  function animateCount(el){
+    const target = parseFloat(el.getAttribute('data-count'));
+    const prefix = el.getAttribute('data-prefix') || '';
+    const suffix = el.getAttribute('data-suffix') || '';
+    if(reduceMotion){
+      el.textContent = prefix + target + suffix;
+      return;
+    }
+    const duration = 1400;
+    const start = performance.now();
+    function tick(now){
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = Math.round(target * eased);
+      el.textContent = prefix + value + suffix;
+      if(progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const statIo = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ animateCount(e.target); statIo.unobserve(e.target); }
+    });
+  }, {threshold:0.5});
+  statNums.forEach(el=>statIo.observe(el));
+
+  // expandable service cards
+  document.querySelectorAll('.do-card').forEach(card=>{
+    card.addEventListener('click', ()=>{
+      const expanded = card.getAttribute('aria-expanded') === 'true';
+      card.setAttribute('aria-expanded', String(!expanded));
+      const label = card.querySelector('.do-toggle-label');
+      if(label) label.textContent = expanded ? 'Read more' : 'Show less';
+    });
+  });
 </script>
 
 </body>
