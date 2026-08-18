@@ -285,7 +285,7 @@
   .section-pad{ padding: 100px 0; }
   .head-block{ max-width: 640px; margin-bottom: 56px; }
   .head-block h2{ font-size: clamp(30px,3.6vw,44px); margin-top:14px; }
-  .head-block h2 em{ font-style: italic; color: var(--gold-deep); font-weight:500;}
+  .head-block h2 em{ font-style: normal; color: var(--gold-deep); font-weight:700;}
 
   /* ---------- STORY ---------- */
   .story-grid{
@@ -448,7 +448,7 @@
 
   /* ---------- TESTIMONIALS ---------- */
   .words-grid{
-    display:grid; grid-template-columns: repeat(2,1fr); gap: 28px;
+    display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 28px;
   }
   .note{
     background: #FFFDF6;
@@ -577,7 +577,6 @@
           <img src="assets/headshot.jpg" alt="Portrait of Zyra Rosel">
         </div>
         <div class="story-tag">
-          <b>Based in</b> Hermosa, Bataan, PH<br>
           <b>Working</b> remote, worldwide
         </div>
       </div>
@@ -671,8 +670,23 @@
         <h4>Admin &amp; Ops</h4>
         <div class="chip-row">
           <span class="chip">Google Workspace</span>
+          <span class="chip">Microsoft Office</span>
           <span class="chip">Monday.com</span>
           <span class="chip">Trello</span>
+          <span class="chip">BaseCamp</span>
+          <span class="chip">Dropbox</span>
+          <span class="chip">BambooHR</span>
+        </div>
+      </div>
+      <div class="tool-group">
+        <h4>Comms &amp; Scheduling</h4>
+        <div class="chip-row">
+          <span class="chip">Slack</span>
+          <span class="chip">Zoom</span>
+          <span class="chip">WhatsApp</span>
+          <span class="chip">GoToConnect</span>
+          <span class="chip">Calendly</span>
+          <span class="chip">DocuSign</span>
         </div>
       </div>
       <div class="tool-group">
@@ -689,12 +703,14 @@
           <span class="chip">Canva</span>
           <span class="chip">CapCut</span>
           <span class="chip">Adobe</span>
+          <span class="chip">Lightroom</span>
+          <span class="chip">Pixieset</span>
         </div>
       </div>
       <div class="tool-group">
-        <h4>Comms &amp; CRM</h4>
+        <h4>Social &amp; CRM</h4>
         <div class="chip-row">
-          <span class="chip">GoToConnect</span>
+          <span class="chip">Meta Business Suite</span>
           <span class="chip">GoHighLevel</span>
         </div>
       </div>
@@ -703,6 +719,11 @@
         <div class="chip-row">
           <span class="chip">Claude AI</span>
           <span class="chip">ChatGPT</span>
+          <span class="chip">Gemini</span>
+          <span class="chip">Fathom AI</span>
+          <span class="chip">Loom</span>
+          <span class="chip">Base44</span>
+          <span class="chip">Obvio</span>
         </div>
       </div>
     </div>
@@ -724,6 +745,10 @@
         <p class="q">"Just want to take a moment to thank you for your dedication to my wound care project. I want to tell you how grateful I am, but also how proud I am to see your growth. As a mid-year appreciation, I'd like to give you a bonus."</p>
         <div class="who">— Client, Healthcare Practice</div>
       </div>
+      <div class="note">
+        <p class="q">"We could not be happier — Zyra has genuinely exceeded every expectation we had. She learned our business incredibly quickly, and beyond just handling tasks, she's been building processes, systems, and documentation, capturing every step so nothing lives only in our heads. She's the kind of assistant you don't have to manage; she anticipates what's needed and gets ahead of it. On top of all that, she's warm, kind, and genuinely a pleasure to work with."</p>
+        <div class="who">— Client, Founders</div>
+      </div>
     </div>
   </div>
 </section>
@@ -736,7 +761,6 @@
     <a class="btn-primary" href="mailto:zyy.rosel@gmail.com">Email me: zyy.rosel@gmail.com</a>
     <div class="contact-meta">
       <a href="mailto:zyy.rosel@gmail.com">zyy.rosel@gmail.com</a>
-      <span>Hermosa, Bataan, Philippines</span>
       <span>Remote · Worldwide</span>
     </div>
   </div>
