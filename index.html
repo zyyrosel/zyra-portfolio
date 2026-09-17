@@ -512,7 +512,7 @@
     color: var(--gold-deep); margin-bottom:14px;
   }
   .chip-row{ display:flex; flex-wrap:wrap; gap:9px; }
-  .chip{
+    .chip{
     font-size: 13.5px;
     padding: 8px 14px;
     background: var(--paper-2);
@@ -521,6 +521,15 @@
     color: var(--ink-soft);
     transition: transform .18s ease, border-color .18s ease, background .18s ease, color .18s ease;
     cursor:default;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .chip img{
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    border-radius: 3px;
   }
   .chip:hover{
     transform: translateY(-2px) scale(1.04);
@@ -768,69 +777,68 @@
       <h2>Systems I already <em>speak fluently.</em></h2>
     </div>
     <div class="tools-note reveal">Currently building automated workflows with Claude AI + GoHighLevel</div>
-    <div class="tool-groups reveal">
+        <div class="tool-groups reveal">
       <div class="tool-group">
         <h4>Admin &amp; Ops</h4>
         <div class="chip-row">
-          <span class="chip">Google Workspace</span>
-          <span class="chip">Microsoft Office</span>
-          <span class="chip">Monday.com</span>
-          <span class="chip">Trello</span>
-          <span class="chip">BaseCamp</span>
-          <span class="chip">Dropbox</span>
-          <span class="chip">BambooHR</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=workspace.google.com" alt="">Google Workspace</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=microsoft.com" alt="">Microsoft Office</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=monday.com" alt="">Monday.com</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=trello.com" alt="">Trello</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=basecamp.com" alt="">BaseCamp</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=dropbox.com" alt="">Dropbox</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=bamboohr.com" alt="">BambooHR</span>
         </div>
       </div>
       <div class="tool-group">
         <h4>Comms &amp; Scheduling</h4>
         <div class="chip-row">
-          <span class="chip">Slack</span>
-          <span class="chip">Zoom</span>
-          <span class="chip">WhatsApp</span>
-          <span class="chip">GoToConnect</span>
-          <span class="chip">Calendly</span>
-          <span class="chip">DocuSign</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=slack.com" alt="">Slack</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=zoom.us" alt="">Zoom</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=whatsapp.com" alt="">WhatsApp</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=goto.com" alt="">GoToConnect</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=calendly.com" alt="">Calendly</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=docusign.com" alt="">DocuSign</span>
         </div>
       </div>
       <div class="tool-group">
         <h4>Healthcare Systems</h4>
         <div class="chip-row">
-          <span class="chip">DrChrono</span>
-          <span class="chip">DrFirst</span>
-          <span class="chip">Intellicure</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=drchrono.com" alt="">DrChrono</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=drfirst.com" alt="">DrFirst</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=intellicure.com" alt="">Intellicure</span>
         </div>
       </div>
       <div class="tool-group">
         <h4>Content &amp; Design</h4>
         <div class="chip-row">
-          <span class="chip">Canva</span>
-          <span class="chip">CapCut</span>
-          <span class="chip">Adobe</span>
-          <span class="chip">Lightroom</span>
-          <span class="chip">Pixieset</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=canva.com" alt="">Canva</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=capcut.com" alt="">CapCut</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=adobe.com" alt="">Adobe</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=adobe.com" alt="">Lightroom</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=pixieset.com" alt="">Pixieset</span>
         </div>
       </div>
       <div class="tool-group">
         <h4>Social &amp; CRM</h4>
         <div class="chip-row">
-          <span class="chip">Meta Business Suite</span>
-          <span class="chip">GoHighLevel</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=business.facebook.com" alt="">Meta Business Suite</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=gohighlevel.com" alt="">GoHighLevel</span>
         </div>
       </div>
       <div class="tool-group">
         <h4>AI &amp; Automation</h4>
         <div class="chip-row">
-          <span class="chip">Claude AI</span>
-          <span class="chip">ChatGPT</span>
-          <span class="chip">Gemini</span>
-          <span class="chip">Fathom AI</span>
-          <span class="chip">Loom</span>
-          <span class="chip">Base44</span>
-          <span class="chip">Obvio</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=claude.ai" alt="">Claude AI</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=chatgpt.com" alt="">ChatGPT</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=gemini.google.com" alt="">Gemini</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=fathom.video" alt="">Fathom AI</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=loom.com" alt="">Loom</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=base44.com" alt="">Base44</span>
+          <span class="chip"><img src="https://www.google.com/s2/favicons?sz=64&domain=obv.io" alt="">Obvio</span>
         </div>
       </div>
     </div>
-  </div>
 </section>
 
 <section class="section-pad" id="words" style="background:var(--paper-2); border-top:1px solid var(--line);">
